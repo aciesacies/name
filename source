@@ -1,0 +1,252 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, SaveConfig = true, TntroEnabled = false})
+
+OrionLib:MakeNotification({
+	Name = "Logged In",
+	Content = "You are logged in as "..Player.Name..".",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+_G.Key = "12sGtzz3"
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+    if game.PlaceId == 286090429 then
+        local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+        local Window = OrionLib:MakeWindow({Name = "Arsenal", HidePremium = false, IntroText = "Acies Hub", SaveConfig = true, ConfigFolder = "Arsenal"})
+        
+        --Values
+        _G.Aimbot = true
+        
+        
+        --Functions
+        
+        function Aimbot()
+            while _G.Aimbot == true do
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))(); 
+                wait(1000000000)
+            end
+        end
+        
+        
+        
+        
+        
+        
+        --Tabs
+        local Aim = Window:MakeTab({
+            Name = "Aimbot",
+            Icon = "rbxassetid://4483345998",
+            PremiumOnly = false
+        })
+        
+        
+        
+        
+        --Toggles
+        Aim:AddToggle({
+            Name = "Aimbot",
+            Default = false,
+            Callback = function(Value)
+                _G.Aimbot = Value
+                Aimbot()
+            end    
+        })
+        
+        
+        
+        
+        
+        
+        elseif  game.PlaceId == 8750997647 then
+        local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+        local Window = OrionLib:MakeWindow({Name = "⚡ Tapping Legends X", HidePremium = false, IntroText = "Acies Hub", SaveConfig = true, ConfigFolder = "Tapping Legends"})
+        
+        --tabs
+        
+        local FarmTab = Window:MakeTab({
+            Name = "AutoFarm",
+            Icon = "rbxassetid://4483345998",
+            PremiumOnly = false
+        })
+        
+        
+        local Pets = Window:MakeTab({
+            Name = "Pets",
+            Icon = "rbxassetid://4483345998",
+            PremiumOnly = false
+        })
+        
+        
+        
+        
+        function autoTap()
+            while _G.autoTap == true do
+                game:GetService("ReplicatedStorage").Remotes.Tap:FireServer()
+                wait(.000001)
+            end
+        end
+        
+        
+        function autoRebirth()
+            while _G.autoRebirth == true do
+                 game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(1)
+                 wait(.000001)
+            end
+        end
+        
+        
+        function autoEquipbest()
+            while _G.autoEquipbest == true do
+                 game:GetService("ReplicatedStorage").Remotes.EquipBest:InvokeServer()
+                 wait(30)
+            end
+        end
+        
+        
+        _G.autoTap = true
+        _G.autoRebirth = true
+        _G.autoHatch = true
+        _G.autoEquipbest = true
+        
+        --Toggles
+        
+        Pets:AddToggle({
+            Name = "Equip Best",
+            Default = false,
+            Callback = function(Value)
+                _G.autoEquipbest = Value
+                autoEquipbest()
+            end    
+        })
+        
+        
+        
+        
+        
+        FarmTab:AddToggle({
+            Name = "Auto Rebirth",
+            Default = false,
+            Callback = function(Value)
+                _G.autoRebirth = Value
+                autoRebirth()
+            end    
+        })
+        
+        
+        
+        FarmTab:AddToggle({
+            Name = "Auto Tap",
+            Default = false,
+            Callback = function(Value)
+                _G.autoTap = Value
+                autoTap()
+            end    
+        })
+        
+        
+        --Toggles
+        
+        
+        
+        
+ elseif  game.PlaceId == 2788229376 then
+ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+  local Window = OrionLib:MakeWindow({Name = "Dahood", HidePremium = false, IntroText = "Acies Hub", SaveConfig = true, ConfigFolder = "Dahood"})
+        
+        
+  _G.dahoodGui = true
+        
+ --Function
+        
+ function dahoodGui()
+     while _G.dahoodGui == true do
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/NighterEpic/FadedLock/main/YesEpic"))() 
+                 
+    end
+ end
+
+        
+        
+        
+        --Tab
+        
+        
+ local Dahood = Window:MakeTab({
+    Name = "Dahood GUI",
+        Icon = "rbxassetid://4483345998",
+            PremiumOnly = false
+        })
+
+        --Toggle
+        
+Dahood:AddToggle({
+    Name = "Silent Aim",
+        Default = false,
+            Callback = function(Value)
+                _G.dahoodGui = Value
+                dahoodGui()
+            end    
+        })
+        
+        
+        
+        
+        
+        
+end
+OrionLib:Init()
+end
+
+
+
+
+function CorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Correct Key",
+        Content = "You have entered the correct key!",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+function InCorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Wrong Key",
+        Content = "You have entered the wrong key!",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+
+
+
+local Tab = Window:MakeTab({
+	Name = "Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Enter Key",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		_G.KeyInput = Value
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+      		if _G.KeyInput == _G.Key then
+            MakeScriptHub()
+            CorrectKeyNotification()
+            else
+                InCorrectKeyNotification()
+         end
+    end
+})
